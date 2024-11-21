@@ -1,4 +1,3 @@
-.test {
-  color: red;
-  background-color: black;
+iframe {
+    pointer-events: auto !important;
 }
