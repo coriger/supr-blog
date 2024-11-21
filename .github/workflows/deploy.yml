@@ -16,7 +16,7 @@ jobs:
 
       # 安装最新版本的 Node.js
       - name: Setup Node.js (latest version)
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: 'node' # 获取最新版本的 Node.js
 
@@ -26,10 +26,10 @@ jobs:
           corepack enable
           corepack prepare yarn --activate # 安装并激活最新版本的 Yarn
 
-      # 安装依赖
+      # 安装依赖并禁止修改 lockfile
       - name: Install dependencies
         run: |
-          yarn
+          yarn install --frozen-lockfile
           npm install
 
       # 构建 VuePress 项目
