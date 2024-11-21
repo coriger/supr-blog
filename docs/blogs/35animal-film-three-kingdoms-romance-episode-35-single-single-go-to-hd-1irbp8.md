@@ -5,8 +5,12 @@ date: 2024-08-16 18:09:24
 article: true
 timeline: false
 isOriginal: true
+tags:
+    - 三国演义
+categories:
+    - 四大名著
+password: a40d453e5ae125ce0ce606b99e82503e
 ---
-
 
 <!-- more -->
 
@@ -21,12 +25,3 @@ isOriginal: true
 > 时长：25:01
 >
 > 状态：#视频笔记/GalaxySpace YouTube/未读#​
-
----
-
-tags:
-    - 三国演义
-categories:
-    - 四大名著
-password: a40d453e5ae125ce0ce606b99e82503e
----
