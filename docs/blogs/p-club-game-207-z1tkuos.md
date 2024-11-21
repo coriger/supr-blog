@@ -1,15 +1,11 @@
 ---
 title: P 社游戏[207]
-short_title: ''
 date: 2024-06-23 18:55:11
-article: true
-timeline: false
-isOriginal: true
+tags:
+ - P社
+categories:
+ - 游戏
 ---
-
-
-<!-- more -->
-
 
 # P 社游戏[207]
 
