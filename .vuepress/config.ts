@@ -1,7 +1,6 @@
 import { defineUserConfig } from "vuepress";
 import recoTheme from "vuepress-theme-reco";
 import { viteBundler } from '@vuepress/bundler-vite'
-import { removeHtmlExtensionPlugin } from "vuepress-plugin-remove-html-extension";
 
 export default defineUserConfig({
     title: "supr-blog",
