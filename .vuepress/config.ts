@@ -1,6 +1,7 @@
 import { defineUserConfig } from "vuepress";
 import recoTheme from "vuepress-theme-reco";
 import { viteBundler } from '@vuepress/bundler-vite'
+import { removeHtmlExtensionPlugin } from "vuepress-plugin-remove-html-extension";
 
 export default defineUserConfig({
     title: "supr-blog",
@@ -41,8 +42,8 @@ export default defineUserConfig({
         autoSetSeries: true,
         navbar: [
             { text: "首页", link: "/" },
-            { text: "分类", link: "/categories/Java/1.html" },
-            { text: "标签", link: "/tags/jishu/1.html" },
+            { text: "分类", link: "/categories/Java/1" },
+            { text: "标签", link: "/tags/jishu/1" },
             {
                 text: "系列",
                 children: [
