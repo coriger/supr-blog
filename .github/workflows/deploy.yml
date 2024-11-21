@@ -3,7 +3,7 @@ name: Deploy VuePress 2 to GitHub Pages
 on:
   push:
     branches:
-      - master # 监听 master 分支的推送事件
+      - master  # 监听 master 分支的推送事件
 
 jobs:
   build-and-deploy:
@@ -18,19 +18,17 @@ jobs:
       - name: Setup Node.js (latest version)
         uses: actions/setup-node@v4
         with:
-          node-version: 'node' # 获取最新版本的 Node.js
+          node-version: 'node'  # 获取最新版本的 Node.js
 
       # 启用 Corepack 并安装最新版本的 Yarn
       - name: Setup Yarn with Corepack
         run: |
           corepack enable
-          corepack prepare yarn --activate # 安装并激活最新版本的 Yarn
+          corepack prepare yarn --activate  # 安装并激活最新版本的 Yarn
 
       # 安装依赖并禁止修改 lockfile
       - name: Install dependencies
-        run: |
-          yarn install --frozen-lockfile
-          npm install
+        run: yarn install --frozen-lockfile
 
       # 构建 VuePress 项目
       - name: Build VuePress site
