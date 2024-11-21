@@ -18,13 +18,13 @@ jobs:
       - name: Setup Node.js (latest version)
         uses: actions/setup-node@v4
         with:
-          node-version: 'node'  # 获取最新版本的 Node.js
+          node-version: '23.2.0'
 
       # 启用 Corepack 并安装最新版本的 Yarn
       - name: Setup Yarn with Corepack
         run: |
           corepack enable
-          corepack prepare yarn --activate  # 安装并激活最新版本的 Yarn
+          corepack prepare yarn@4.5.1 --activate
 
       # 安装依赖并禁止修改 lockfile
       - name: Install dependencies
