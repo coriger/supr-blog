@@ -3,7 +3,7 @@ name: Deploy VuePress 2 to GitHub Pages
 on:
   push:
     branches:
-      - master # 使用 master 分支作为触发条件
+      - master # 监听 master 分支的推送事件
 
 jobs:
   build-and-deploy:
@@ -14,18 +14,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 安装指定版本的 Node.js
-      - name: Setup Node.js
+      # 安装最新版本的 Node.js
+      - name: Setup Node.js (latest version)
         uses: actions/setup-node@v4
         with:
-          node-version: 23.2.0 # 使用 Node.js v23.2.0
+          node-version: 'node' # 获取最新版本的 Node.js
 
-      # 启用 Corepack 并安装 Yarn 4.5.1
-      - name: Enable Corepack and install Yarn
+      # 启用 Corepack 并安装最新版本的 Yarn
+      - name: Setup Yarn with Corepack
         run: |
           corepack enable
-          corepack prepare yarn@4.5.1 --activate
-
+          corepack prepare yarn --activate # 安装并激活最新版本的 Yarn
 
       # 安装依赖
       - name: Install dependencies
@@ -41,5 +40,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.PERSONAL_TOKEN }} # 使用自定义的 GitHub Token
-          publish_dir: .vuepress/dist # VuePress 默认构建输出目录
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_dir: .vuepress/dist
