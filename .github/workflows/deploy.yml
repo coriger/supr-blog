@@ -32,7 +32,7 @@ jobs:
 
       # 构建 VuePress 项目
       - name: Build VuePress site
-        run: yarn dev
+        run: yarn build
 
       # 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
