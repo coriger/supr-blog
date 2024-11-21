@@ -38,8 +38,21 @@ export default defineUserConfig({
         // password: 'a40d453e5ae125ce0ce606b99e82503e',
         // 设置语言
         lang: "zh-CN",
-        // 自动设置分类
+        // series: {
+        //     '/docs/木鱼微剧场-三国演义/': [
+        //       {
+        //         text: '木鱼微剧场-三国演义',
+        //         children: [
+        //           '1-董卓乱权',
+        //           '2-煮酒论英雄',
+        //           '3-官渡之战',
+        //         ],
+        //       },
+        //     ],
+        // },
         autoSetSeries: true,
+        // 自动设置分类
+        autoSetBlogCategories: true,
         navbar: [
             { text: "首页", link: "/" },
             { text: "分类", link: "/categories/Java/1" },
@@ -47,7 +60,7 @@ export default defineUserConfig({
             {
                 text: "系列",
                 children: [
-                    { text: "vuepress-reco", link: "/docs/theme-reco/theme" },
+                    { text: "木鱼微剧场-三国演义", link: "/series/木鱼微剧场-三国演义/1-董卓乱权" },
                     { text: "vuepress-theme-reco", link: "/blogs/other/guide" },
                     {
                         text: '配置',
