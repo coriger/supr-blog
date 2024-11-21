@@ -8,6 +8,7 @@ export default defineUserConfig({
     head: [
         ['link', { rel: 'icon', href: 'logo.png' }],
     ],
+    base: "/supr-blog/",
     bundler: viteBundler(),
     theme: recoTheme({
         style: "@vuepress-reco/style-default",
