@@ -1,3 +1,14 @@
 iframe {
     pointer-events: auto !important;
+    max-width: 100%;
+    height: 513px; /* 固定高度 */
+    width: 903px;  /* 固定宽度 */
 }
+
+
+.theme-record-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 或者设置为你希望的高度 */
+  }
