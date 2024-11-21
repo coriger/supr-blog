@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master  # 监听 master 分支的推送事件
+    paths:
+      - '!images/**' # 排除 images 文件夹
 
 jobs:
   build-and-deploy:
