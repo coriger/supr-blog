@@ -1,11 +1,12 @@
 name: Deploy VuePress 2 to GitHub Pages
 
 on:
-  push:
-    branches:
-      - master  # 监听 master 分支的推送事件
-    paths:
-      - '!images/**' # 排除 images 文件夹
+    push:
+      branches:
+        - master  # 监听 master 分支
+      paths:
+        - '**'        # 监听所有文件的变动
+        - '!images/**' # 排除 images 文件夹
 
 jobs:
   build-and-deploy:
