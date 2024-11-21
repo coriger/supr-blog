@@ -1,0 +1,42 @@
+name: Deploy VuePress 2 to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master # 使用 master 分支作为触发条件
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 安装指定版本的 Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 23.2.0 # 使用 Node.js v23.2.0
+
+      # 安装指定版本的 Yarn
+      - name: Setup Yarn
+        run: npm install -g yarn@4.5.1 # 安装 Yarn 4.5.1
+
+      # 安装依赖
+      - name: Install dependencies
+        run: |
+          yarn
+          npm install
+
+      # 构建 VuePress 项目
+      - name: Build VuePress site
+        run: yarn build
+
+      # 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.PERSONAL_TOKEN }} # 使用自定义的 GitHub Token
+          publish_dir: .vuepress/dist # VuePress 默认构建输出目录
