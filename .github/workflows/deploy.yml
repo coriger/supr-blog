@@ -28,7 +28,9 @@ jobs:
 
       # 安装依赖并禁止修改 lockfile
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: |
+            yarn add @vueuse/core@9.13.0
+            yarn install --immutable
 
       # 构建 VuePress 项目
       - name: Build VuePress site
