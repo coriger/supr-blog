@@ -20,6 +20,13 @@ jobs:
         with:
           node-version: 23.2.0 # 使用 Node.js v23.2.0
 
+      # 启用 Corepack 并安装 Yarn 4.5.1
+      - name: Enable Corepack and install Yarn
+        run: |
+          corepack enable
+          corepack prepare yarn@4.5.1 --activate
+
+
       # 安装依赖
       - name: Install dependencies
         run: |
