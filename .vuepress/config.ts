@@ -60,25 +60,7 @@ export default defineUserConfig({
             {
                 text: "系列",
                 children: [
-                    { text: "木鱼微剧场-三国演义", link: "/series/木鱼微剧场-三国演义/1-董卓乱权" },
-                    { text: "vuepress-theme-reco", link: "/blogs/other/guide" },
-                    {
-                        text: '配置',
-                        children: [
-                            { text: '主题配置', link: '/docs/theme/frontmatter' },
-                            { text: 'Markdown 扩展', link: '/docs/theme/custom-container' },
-                            { text: '高级', link: '/docs/theme/custom-catalog-title' },
-                        ],
-                    },
-                    {
-                        text: '插件',
-                        children: [
-                            { text: 'page', link: '/docs/plugins/page' },
-                            { text: 'comments', link: '/docs/plugins/comments' },
-                            { text: 'vue-previews', link: '/docs/plugins/vue-previews' },
-                            { text: 'bulletin-popover', link: '/docs/plugins/bulletin-popover' },
-                        ],
-                    },
+                    { text: "三国演义", link: "/series/sanguoyanyi/baogansigeyue-sanguoyanyi/1-p1：sanguo1-4hui.html" },
                 ],
             },
             {
