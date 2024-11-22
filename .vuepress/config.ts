@@ -1,10 +1,14 @@
 import { defineUserConfig } from "vuepress";
 import recoTheme from "vuepress-theme-reco";
 import { viteBundler } from '@vuepress/bundler-vite'
+const autoInjectPlugin = require('./plugins/auto-inject.js');
 
 export default defineUserConfig({
     title: "supr-blog",
     description: "",
+    plugins: [
+        autoInjectPlugin(),
+    ],
     head: [
         ['link', { rel: 'icon', href: 'logo.png' }],
     ],
@@ -51,6 +55,7 @@ export default defineUserConfig({
         //     ],
         // },
         autoSetSeries: true,
+        
         // 自动设置分类
         autoSetBlogCategories: true,
         navbar: [
