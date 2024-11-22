@@ -61,6 +61,7 @@ export default defineUserConfig({
                 text: "系列",
                 children: [
                     { text: "三国演义", link: "/series/sanguoyanyi/baogansigeyue-sanguoyanyi/1-p1：sanguo1-4hui.html" },
+                    { text: "一句顶一万句", link: "/series/read/yijudingyiwanju-liuzhenyun/00000_bianzhejianyanyijushengguoqiannian.html" },
                 ],
             },
             {
