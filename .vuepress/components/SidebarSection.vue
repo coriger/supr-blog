@@ -34,6 +34,12 @@
             if(pageNav){
                 pageNav.style.setProperty('padding-left', '0', 'important');
             }
+
+            var pageContent = document.querySelector(".page-content");
+            if(pageContent){
+                pageContent.style.setProperty('padding-left', '20em', 'important'); 
+                pageContent.style.setProperty('padding-right', '20em', 'important'); 
+            }
         }
       },
     },
