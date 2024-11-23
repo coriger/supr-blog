@@ -37,8 +37,8 @@
 
             var pageContent = document.querySelector(".page-content");
             if(pageContent){
-                pageContent.style.setProperty('padding-left', '20em', 'important'); 
-                pageContent.style.setProperty('padding-right', '20em', 'important'); 
+                pageContent.style.setProperty('padding-left', '15em', 'important'); 
+                pageContent.style.setProperty('padding-right', '15em', 'important'); 
             }
         }
       },
