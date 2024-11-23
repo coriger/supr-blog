@@ -7,7 +7,7 @@ module.exports = (options) => ({
           src = src.replace(/\[&lt;&lt;\]\(\)/g, '');
           src = src.replace(/\[&gt;&gt;\]\(\)/g, '');
         // 确保 `filePathRelative` 存在并检查路径条件
-        if (env.filePathRelative && env.filePathRelative.includes('series/')) {
+        if (env.filePathRelative && (env.filePathRelative.includes('series/') || env.filePathRelative.includes('blogs/'))) {
           const injectedComponent = '<SidebarSection />';
           return originalRender(`${injectedComponent}\n${src}`, env);
         } else {
