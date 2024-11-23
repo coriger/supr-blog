@@ -4,7 +4,7 @@ import { viteBundler } from '@vuepress/bundler-vite'
 const autoInjectPlugin = require('./plugins/auto-inject.js');
 
 export default defineUserConfig({
-    title: "supr-blog",
+    title: "SuprBlog",
     description: "",
     plugins: [
         autoInjectPlugin(),
@@ -59,39 +59,39 @@ export default defineUserConfig({
         autoSetBlogCategories: true,
         navbar: [
             { text: "首页", link: "/" },
-            { text: "分类", link: "/categories/Java/1" },
-            { text: "标签", link: "/tags/jishu/1" },
+            { text: "分类", link: "/categories/jiaoyi/1" },
+            { text: "标签", link: "/tags/Trade/1" },
             {
                 text: "系列",
                 children: [
                     { text: "三国演义", link: "/series/sanguoyanyi/baogansigeyue-sanguoyanyi/1-p1：sanguo1-4hui.html" },
-                    { text: "一句顶一万句", link: "/series/read/yijudingyiwanju-liuzhenyun/00000_bianzhejianyanyijushengguoqiannian.html" },
+                    { text: "阅读", link: "/series/read/yijudingyiwanju-liuzhenyun/00000_bianzhejianyanyijushengguoqiannian.html" },
                 ],
             },
-            {
-                text: "文档",
-                children: [
-                    { text: "vuepress-reco", link: "/docs/theme-reco/theme" },
-                    { text: "vuepress-theme-reco", link: "/blogs/other/guide" },
-                    {
-                        text: '配置',
-                        children: [
-                            { text: '主题配置', link: '/docs/theme/frontmatter' },
-                            { text: 'Markdown 扩展', link: '/docs/theme/custom-container' },
-                            { text: '高级', link: '/docs/theme/custom-catalog-title' },
-                        ],
-                    },
-                    {
-                        text: '插件',
-                        children: [
-                            { text: 'page', link: '/docs/plugins/page' },
-                            { text: 'comments', link: '/docs/plugins/comments' },
-                            { text: 'vue-previews', link: '/docs/plugins/vue-previews' },
-                            { text: 'bulletin-popover', link: '/docs/plugins/bulletin-popover' },
-                        ],
-                    },
-                ],
-            },
+            // {
+            //     text: "文档",
+            //     children: [
+            //         { text: "vuepress-reco", link: "/docs/theme-reco/theme" },
+            //         { text: "vuepress-theme-reco", link: "/blogs/other/guide" },
+            //         {
+            //             text: '配置',
+            //             children: [
+            //                 { text: '主题配置', link: '/docs/theme/frontmatter' },
+            //                 { text: 'Markdown 扩展', link: '/docs/theme/custom-container' },
+            //                 { text: '高级', link: '/docs/theme/custom-catalog-title' },
+            //             ],
+            //         },
+            //         {
+            //             text: '插件',
+            //             children: [
+            //                 { text: 'page', link: '/docs/plugins/page' },
+            //                 { text: 'comments', link: '/docs/plugins/comments' },
+            //                 { text: 'vue-previews', link: '/docs/plugins/vue-previews' },
+            //                 { text: 'bulletin-popover', link: '/docs/plugins/bulletin-popover' },
+            //             ],
+            //         },
+            //     ],
+            // },
         ],
     }),
     // debug: true,

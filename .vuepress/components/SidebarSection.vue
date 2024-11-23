@@ -20,13 +20,20 @@
         )
 
         // 判断当前是否有iframe
-        if (document.querySelector("iframe")) {
+        if (document.querySelectorAll("iframe").length > 0) {
         }else{
             // 没有iframe ..theme-reco-md-content移除padding-left
             document.querySelector(".theme-reco-md-content").style.setProperty('padding-left', '0', 'important'); // 设置新的值，也可以设置为其他值
             // .page-meta .page-nav也一样
-            document.querySelector(".page-meta").style.setProperty('padding-left', '0', 'important'); // 设置新的值，也可以设置为其他值
-            document.querySelector(".page-nav").style.setProperty('padding-left', '0', 'important');
+            var pageMeta = document.querySelector(".page-meta");
+            var pageNav = document.querySelector(".page-nav");
+            if(pageMeta){
+                pageMeta.style.setProperty('padding-left', '0', 'important'); // 设置新的值，也可以设置为其他值
+            }
+
+            if(pageNav){
+                pageNav.style.setProperty('padding-left', '0', 'important');
+            }
         }
       },
     },
