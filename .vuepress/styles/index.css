@@ -52,6 +52,10 @@ iframe {
     position: relative;
 }
 
+.theme-reco-md-content p blockquote {
+    line-height: 0.8rem !important;
+}
+
 .theme-reco-md-content div iframe {
     position: absolute;
     left: 25%; /* 左半边的中心位置，整个容器宽度的 25% */

@@ -55,7 +55,6 @@ export default defineUserConfig({
         //     ],
         // },
         autoSetSeries: true,
-        
         // 自动设置分类
         autoSetBlogCategories: true,
         navbar: [
