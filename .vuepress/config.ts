@@ -42,8 +42,7 @@ export default defineUserConfig({
         algolia: {
             appId: '3GLZY1790G',
             apiKey: '13abc3c1bc047a4a8d0bcdad22634638',
-            indexName: 'supr_blog_pages',
-            algoliaOptions: { 'facetFilters': [] },
+            indexName: 'supr-blog-vuepress2',
         },
         autoSetSeries: true,
         // 自动设置分类
