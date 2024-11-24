@@ -11,13 +11,18 @@ export default defineUserConfig({
         autoInjectPlugin(),
         docsearchPlugin({
             appId: '3GLZY1790G',
-            apiKey: '0ac9c32eba46a71a7167ae2babfc9030',
+            apiKey: '13abc3c1bc047a4a8d0bcdad22634638',
             indexName: 'supr_blog_pages',
             locales: {
                 '/': {
-                    placeholder: 'Search docs',
+                  placeholder: '搜索文档',
+                  translations: {
+                    button: {
+                      buttonText: '搜索文档',
+                    },
+                  },
                 },
-            }
+            },
         }),
     ],
     head: [
