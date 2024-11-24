@@ -11,6 +11,7 @@ export default defineUserConfig({
     ],
     head: [
         ['link', { rel: 'icon', href: 'logo.png' }],
+        ['meta', { name: 'algolia-site-verification', content: '07CCC27F77313997' }]
     ],
     base: "/supr-blog/",
     bundler: viteBundler(),
