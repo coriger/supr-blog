@@ -49,12 +49,12 @@ export default defineUserConfig({
         autoSetBlogCategories: true,
         navbar: [
             { text: "首页", link: "/" },
-            { text: "分类", link: "/categories/jiaoyi/1" },
+            { text: "分类", link: "/categories/trade/1" },
             { text: "标签", link: "/tags/Trade/1" },
             {
                 text: "系列",
                 children: [
-                    { text: "三国演义", link: "/series/sanguoyanyi/baogansigeyue-sanguoyanyi/1-p1：sanguo1-4hui.html" },
+                    { text: "三国演义", link: "/series/sanguoyanyi/baogansigeyue-sanguoyanyi/1-p1sanguo1-4hui.html" },
                     { text: "阅读", link: "/series/read/yijudingyiwanju-liuzhenyun/00000_bianzhejianyanyijushengguoqiannian.html" },
                 ],
             },
