@@ -16,50 +16,34 @@ export default defineUserConfig({
     base: "/supr-blog/",
     bundler: viteBundler(),
     theme: recoTheme({
-        style: "@vuepress-reco/style-default",
+        locales: {
+            '/': {
+              selectLanguageName: '简体中文',
+              lastUpdatedText: '最后更新时间',
+              catalogTitle: '页面导航',
+              tip: '提示',
+              info: '信息',
+              warning: '警告',
+              danger: '危险',
+              details: '详情',
+              editLinkText: '编辑当前页面',
+              notFound: '哇哦，没有发现这个页面！',
+              backToHome: '返回首页',
+              tagsText: '标签',
+              categoriesText: '分类',
+            }
+        },
         logo: "/logo.png",
         author: "coriger",
         authorAvatar: "/head2.png",
         docsBranch: "master",
         docsDir: "./docs",
         colorMode: 'dark', // dark, light, 默认 auto
-        tip: '提示',
-        info: '信息',
-        danger: '危险',
-        warning: '警告',
-        details: '详情',
-        tagsText: '标签',
-        backToHome: '返回首页',
-        categoriesText: '分类',
-        catalogTitle: '页面导航',
-        editLinkText: '编辑当前页面',
-        lastUpdatedText: '最后更新时间',
-        selectLanguageName: '简体中文',
-        notFound: '哇哦，没有发现这个页面！',
-        inputPasswordText: '请输入密码',
-        unlockSucessText: '密码正确，玩得开心！',
-        unlockFailuerText: '密码错误，请重新输入！',
         algolia: {
             appId: '3GLZY1790G',
             apiKey: '13abc3c1bc047a4a8d0bcdad22634638',
             indexName: 'supr_blog_pages',
         },
-        // 加密整个站点
-        // password: 'a40d453e5ae125ce0ce606b99e82503e',
-        // 设置语言
-        lang: "zh-CN",
-        // series: {
-        //     '/docs/木鱼微剧场-三国演义/': [
-        //       {
-        //         text: '木鱼微剧场-三国演义',
-        //         children: [
-        //           '1-董卓乱权',
-        //           '2-煮酒论英雄',
-        //           '3-官渡之战',
-        //         ],
-        //       },
-        //     ],
-        // },
         autoSetSeries: true,
         // 自动设置分类
         autoSetBlogCategories: true,
@@ -74,30 +58,16 @@ export default defineUserConfig({
                     { text: "阅读", link: "/series/read/yijudingyiwanju-liuzhenyun/00000_bianzhejianyanyijushengguoqiannian.html" },
                 ],
             },
-            // {
-            //     text: "文档",
-            //     children: [
-            //         { text: "vuepress-reco", link: "/docs/theme-reco/theme" },
-            //         { text: "vuepress-theme-reco", link: "/blogs/other/guide" },
-            //         {
-            //             text: '配置',
-            //             children: [
-            //                 { text: '主题配置', link: '/docs/theme/frontmatter' },
-            //                 { text: 'Markdown 扩展', link: '/docs/theme/custom-container' },
-            //                 { text: '高级', link: '/docs/theme/custom-catalog-title' },
-            //             ],
-            //         },
-            //         {
-            //             text: '插件',
-            //             children: [
-            //                 { text: 'page', link: '/docs/plugins/page' },
-            //                 { text: 'comments', link: '/docs/plugins/comments' },
-            //                 { text: 'vue-previews', link: '/docs/plugins/vue-previews' },
-            //                 { text: 'bulletin-popover', link: '/docs/plugins/bulletin-popover' },
-            //             ],
-            //         },
-            //     ],
-            // },
+        ],
+        socialLinks: [
+            {
+              icon: 'IconReco',
+              link: 'https://coriger.github.io/supr-blog/'
+            },
+            {
+              icon: 'IconGithub',
+              link: 'https://github.com/coriger'
+            },
         ],
     }),
     locales: {
