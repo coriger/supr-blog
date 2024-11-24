@@ -39,6 +39,11 @@ export default defineUserConfig({
         inputPasswordText: '请输入密码',
         unlockSucessText: '密码正确，玩得开心！',
         unlockFailuerText: '密码错误，请重新输入！',
+        algolia: {
+            appId: '3GLZY1790G',
+            apiKey: '0ac9c32eba46a71a7167ae2babfc9030',
+            indexName: 'supr-blog-crawl',
+        },
         // 加密整个站点
         // password: 'a40d453e5ae125ce0ce606b99e82503e',
         // 设置语言
@@ -95,5 +100,12 @@ export default defineUserConfig({
             // },
         ],
     }),
+    locales: {
+        '/': {
+            lang: 'zh-CN',
+            title: 'SuprBlog',
+            description: 'SuprBlog',
+        },
+    },
     // debug: true,
 });
