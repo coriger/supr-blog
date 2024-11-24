@@ -41,8 +41,9 @@ export default defineUserConfig({
         colorMode: 'dark', // dark, light, 默认 auto
         algolia: {
             appId: '3GLZY1790G',
-            apiKey: '7eb9472a95dbcf58afb171cbf1d0cd12',
+            apiKey: '13abc3c1bc047a4a8d0bcdad22634638',
             indexName: 'supr_blog_pages',
+            algoliaOptions: { 'facetFilters': [] },
         },
         autoSetSeries: true,
         // 自动设置分类
