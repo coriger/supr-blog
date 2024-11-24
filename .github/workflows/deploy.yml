@@ -27,7 +27,7 @@ jobs:
       - name: Setup Yarn with Corepack
         run: |
           corepack enable
-          corepack prepare yarn@4.5.1 --activate
+          corepack prepare yarn@4.5.2 --activate
 
       # 安装依赖并禁止修改 lockfile
       - name: Install dependencies
