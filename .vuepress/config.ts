@@ -41,11 +41,8 @@ export default defineUserConfig({
         unlockFailuerText: '密码错误，请重新输入！',
         algolia: {
             appId: '3GLZY1790G',
-            apiKey: '381b65c55080b3e1d98263009c963c82',
+            apiKey: '13abc3c1bc047a4a8d0bcdad22634638',
             indexName: 'supr_blog_pages',
-            inputSelector: '### Search ####',
-            algoliaOptions: { 'facetFilters': ["lang:$LANG"] },
-            debug: false
         },
         // 加密整个站点
         // password: 'a40d453e5ae125ce0ce606b99e82503e',
