@@ -11,7 +11,6 @@
     "build": "vuepress build ."
   },
   "dependencies": {
-    "@siyuan-community/siyuan-sdk": "^0.3.14",
     "@vuepress/bundler-vite": "2.0.0-rc.18",
     "@vuepress/bundler-webpack": "2.0.0-rc.18",
     "axios": "^1.7.7",
