@@ -37,8 +37,9 @@ export default {
   methods: {
     articleHref(articleId){
         // 解析当前 URL 中的 topicId
-        const url = new URL(window.location.href);
-        const topicId = url.searchParams.get('topicId');
+        // const url = new URL(window.location.href);
+        // const topicId = url.searchParams.get('topicId');
+        const topicId = '20241124161901-6nofis5';
         // 生成 href 属性的值
         return "./topic.html?topicId="+topicId+"&docId="+articleId;
     },
