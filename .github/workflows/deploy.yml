@@ -26,7 +26,7 @@ jobs:
       # 安装依赖并禁止修改 lockfile
       - name: Install dependencies
         run: |
-            npm install --no-bin-links
+            npm install
 
       # 构建 VuePress 项目
       - name: Build VuePress site
