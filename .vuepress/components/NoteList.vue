@@ -9,7 +9,7 @@
                             {{ note.name }}
                         </option>
                     </select>
-                    <input type="text" v-model="searchWord" placeholder="搜索" @blur="search"/>
+                    <input type="text" v-model="searchWord" placeholder="搜索"/>
                 </div>
                 <button @click="queryParentDirectory">上一页</button>
             </div>
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import {siyuanApi,kernelApi,siyuanSdk} from "../siyuanApi.js";
+import {siyuanApi,kernelApi} from "../siyuanApi.js";
 import { marked } from 'marked';
 
 export default {
@@ -118,17 +118,6 @@ export default {
                 // 捕获错误
                 this.error = "无法获取该笔记本的笔记列表，请检查思源接口或配置";
                 console.error(err);
-            }
-        },
-        async search(){
-            try {
-                // 调用思源 API 获取该笔记本的笔记列表
-                var response = await siyuanSdk.searchDocs({k: this.searchWord});
-                console.log(response);
-                this.searchDocs = response.data || [];
-            } catch (err) {
-                // 捕获错误
-                this.error = "无法获取该笔记本的笔记列表，请检查思源接口或配置";
             }
         },
         async fetchChildArticles(article) {
