@@ -7,16 +7,16 @@ module.exports = (options) => ({
             src = src.replace(/\[&lt;&lt;\]\(\)/g, '');
             src = src.replace(/\[&gt;&gt;\]\(\)/g, '');
             // 确保 `filePathRelative` 存在并检查路径条件  env.filePathRelative.includes('series/')
-            if (env.filePathRelative && env.filePathRelative.includes('series/')) {
-                const injectedComponent = '<SidebarSection />';
-                return originalRender(`${src}\n${injectedComponent}`, env);
-            }else if(env.filePathRelative && env.filePathRelative.includes('blogs/')){
-                console.log(env.filePathRelative);
-                const injectedComponent = '<SidebarSection />';
-                return originalRender(`${src}\n${injectedComponent}`, env);
-            } else {
-                return originalRender(src, env);
-            }
+            // if (env.filePathRelative && env.filePathRelative.includes('series/')) {
+            //     const injectedComponent = '<SidebarSection />';
+            //     return originalRender(`${src}\n${injectedComponent}`, env);
+            // }else if(env.filePathRelative && env.filePathRelative.includes('blogs/')){
+            //     console.log(env.filePathRelative);
+            //     const injectedComponent = '<SidebarSection />';
+            //     return originalRender(`${src}\n${injectedComponent}`, env);
+            // } else {
+            // }
+            return originalRender(src, env);
         };
-    },
+    }
 });

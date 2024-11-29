@@ -50,14 +50,16 @@ export default defineUserConfig({
         navbar: [
             { text: "首页", link: "/" },
             { text: "分类", link: "/categories/trade/1" },
+            // { text: '思源笔记', link: '/siyuan/note-list' },
             { text: "标签", link: "/tags/Trade/1" },
-            {
-                text: "系列",
-                children: [
-                    { text: "三国演义", link: "/series/sanguoyanyi/baogansigeyue-sanguoyanyi/1-p1sanguo1-4hui.html" },
-                    { text: "阅读", link: "/series/read/yijudingyiwanju-liuzhenyun/00000_bianzhejianyanyijushengguoqiannian.html" },
-                ],
-            },
+            { text: '三国演义', link: '/siyuan/topic?topicId=20241124161901-6nofis5&docId=20241126235855-xofvorh' },
+            // {
+            //     text: "系列",
+            //     children: [
+            //         { text: "三国演义", link: "/series/sanguoyanyi/baogansigeyue-sanguoyanyi/1-p1sanguo1-4hui.html" },
+            //         { text: "阅读", link: "/series/read/yijudingyiwanju-liuzhenyun/00000_bianzhejianyanyijushengguoqiannian.html" },
+            //     ],
+            // },
         ],
         socialLinks: [
             {

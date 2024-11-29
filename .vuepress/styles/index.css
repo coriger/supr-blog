@@ -1,12 +1,23 @@
 iframe {
     pointer-events: auto !important;
     max-width: 100%;
-    height: 513px;
-    /* 固定高度 */
-    width: 903px;
-    /* 固定宽度 */
+    /* 左右居中 */
+    margin: 0 auto;
+    /* height: 513px;
+    width: 903px; */
 }
 
+strong{
+    border-bottom: none;
+    box-shadow: none;
+    background-image: none;
+    /* background-color: transparent; */
+    color: #65b84d;
+    font-weight: bold;
+    padding-bottom: 1px;
+    /* border-bottom: 2px solid currentColor; */
+    text-decoration: none;
+}
 
 .theme-record-content {
     display: flex;
@@ -50,26 +61,20 @@ iframe {
     /* 判断如果有iframe 则padding-left */
     padding-left: 50% !important;
     position: relative;
+    border: #65b84d 1px solid !important;
+    border-radius: 5px !important;
+    padding: 1rem !important;
 }
 
 .theme-reco-md-content p blockquote {
     line-height: 0.8rem !important;
 }
 
-.theme-reco-md-content div iframe {
-    position: absolute;
-    left: 25%; /* 左半边的中心位置，整个容器宽度的 25% */
-    transform: translateX(-50%); /* 水平居中偏移 */
-    top: 0px;
-    /* max-width: 900px !important;
-    max-height: 500px!important; */
-    /* width: 45% !important; */
+/* 第一个span隐藏掉 */
+.page-info span:first-child{
+    display: none!important;
 }
 
-.page-meta{
-    padding-left: 50% !important;
-}
-
-.page-nav{
-    padding-left: 50% !important;
+.page-catalog-container {
+    top: 7rem !important;
 }
