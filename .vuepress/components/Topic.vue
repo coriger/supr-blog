@@ -3,7 +3,7 @@
         <div class="note-list-left">
             <div>
                 <ul class="menu">
-                    <menu-item
+                    <MenuItem
                     v-for="article in articles"
                     :key="article.id"
                     :article="article"
@@ -27,6 +27,7 @@
 import {siyuanApi,kernelApi} from "../siyuanApi.js";
 import { marked } from 'marked';
 import { useRoute } from "vue-router";
+import {topic_sgyy} from "./topic_data.ts";
 
 export default {
     setup() {
@@ -43,7 +44,7 @@ export default {
             searchWord: "",
             token: "",
             notes: [], // 笔记本列表
-            articles: [], // 文章列表
+            articles: topic_sgyy, // 文章列表
             searchDocs: [], // 搜索方法
             error: null, // 错误信息
             articleContent: null, // 文章内容
@@ -64,9 +65,9 @@ export default {
             // }
 
             // 获取当前目录下的所有文件
-            var targetPath = this.rootPath + this.topicId + ".sy";
-            this.articles = await this.fetchFullArticles(targetPath);
-            console.log(this.articles);
+            // var targetPath = this.rootPath + this.topicId + ".sy";
+            // this.articles = await this.fetchFullArticles(targetPath);
+            // console.log(this.articles);
 
             // 加载docId对应的文章内容
             this.queryArticleContent(this.docId);
@@ -213,11 +214,6 @@ export default {
                 this.articleContent = this.articleContent.replace(/\(\(\s*.*\s*\)\)/g, '');
                 // 把==这种包住的内容换成<strong>这种格式
                 this.articleContent = this.articleContent.replace(/==([^=]+)==/g, (match, p1) => `<strong>${p1}</strong>`);
-                
-
-                
-
-
                 // 网页title设置标题
             } catch (err) {
                 // 捕获错误
