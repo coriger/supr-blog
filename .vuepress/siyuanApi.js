@@ -2,7 +2,6 @@
 import { SiyuanConfig, SiyuanKernelApi } from "zhi-siyuan-api";
 import axios from "axios";
 
-
 const siyuanConfig = new SiyuanConfig("https://coriger.cpolar.cn", "4si8l21oy72gng6e");
 export const kernelApi = new SiyuanKernelApi(siyuanConfig);
 
