@@ -36,16 +36,17 @@ export default {
   },
   methods: {
     articleHref(articleId){
-        if (process.client) {
-            // 解析当前 URL 中的 topicId
-            const url = new URL(window.location.href);
-            // const topicId = url.searchParams.get('topicId');
-            const topicId = url.searchParams.get('topicId');
-            // 生成 href 属性的值
-            return "./topic.html?topicId="+topicId+"&docId="+articleId;
-        }else{
-            return "";
-        }
+        // if (process.client) {
+        //     // 解析当前 URL 中的 topicId
+        //     const url = new URL(window.location.href);
+        //     // const topicId = url.searchParams.get('topicId');
+        //     const topicId = url.searchParams.get('topicId');
+        // }else{
+        //     return "";
+        // }
+        const topicId = "20241124161901-6nofis5"
+        // 生成 href 属性的值
+        return "./topic.html?topicId="+topicId+"&docId="+articleId;
     },
     toggle() {
       this.expanded = !this.expanded;
