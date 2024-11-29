@@ -26,8 +26,6 @@ jobs:
       # 安装依赖并禁止修改 lockfile
       - name: Install dependencies
         run: |
-            rm -rf node_modules
-            rm -f package-lock.json
             npm install --no-bin-links
 
       # 构建 VuePress 项目
