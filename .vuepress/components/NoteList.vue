@@ -83,29 +83,29 @@ export default {
         }
 
         // 监听鼠标悬浮事件
-        window.addEventListener('mouseover', async (e) => {
-            // 判断当前指向的元素
-            var target = e.target;
-            // 判断是否是a标签，并且href是siyuan:开头
-            if (target.tagName === 'A' && target.href.startsWith('siyuan:')) {
-                // 解析siyuan://blocks/20240427233073-rdfvti4?focus=1  获取20240427233073-rdfvti4
-                var blockId = target.href.split("/")[3].split("?")[0];
-                var response = await kernelApi.getBlockKramdown(blockId);
+        // window.addEventListener('mouseover', async (e) => {
+        //     // 判断当前指向的元素
+        //     var target = e.target;
+        //     // 判断是否是a标签，并且href是siyuan:开头
+        //     if (target.tagName === 'A' && target.href.startsWith('siyuan:')) {
+        //         // 解析siyuan://blocks/20240427233073-rdfvti4?focus=1  获取20240427233073-rdfvti4
+        //         var blockId = target.href.split("/")[3].split("?")[0];
+        //         var response = await kernelApi.getBlockKramdown(blockId);
 
-                var blockContent = marked(response.kramdown || '');
-                this.blockContent = blockContent.replace(/{:.*}/g, '');
-                console.log(this.blockContent);
-            }
-        });
-        // 监听鼠标离开事件
-        window.addEventListener('mouseout', async (e) => {
-            // 判断当前指向的元素
-            var target = e.target;
-            // 判断是否是a标签，并且href是siyuan:开头
-            if (target.tagName === 'A' && target.href.startsWith('siyuan:')) {
-                // 关闭块内容
-            }
-        });
+        //         var blockContent = marked(response.kramdown || '');
+        //         this.blockContent = blockContent.replace(/{:.*}/g, '');
+        //         console.log(this.blockContent);
+        //     }
+        // });
+        // // 监听鼠标离开事件
+        // window.addEventListener('mouseout', async (e) => {
+        //     // 判断当前指向的元素
+        //     var target = e.target;
+        //     // 判断是否是a标签，并且href是siyuan:开头
+        //     if (target.tagName === 'A' && target.href.startsWith('siyuan:')) {
+        //         // 关闭块内容
+        //     }
+        // });
     },
     methods: {
         async fetchNoteRootArticles() {
