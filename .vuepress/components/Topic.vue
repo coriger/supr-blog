@@ -54,14 +54,14 @@ export default {
     async created() {
         try {
             // 先从缓存中获取articles
-            let cachedArticles = localStorage.getItem("suyuan_"+this.topicId+"_articles");
-            if (cachedArticles && cachedArticles.length > 0) {
-                // 从缓存中获取文章列表
-                this.articles = JSON.parse(cachedArticles);
-                // 加载docId对应的文章内容
-                this.queryArticleContent(this.docId);
-                return;
-            }
+            // let cachedArticles = localStorage.getItem("suyuan_"+this.topicId+"_articles");
+            // if (cachedArticles && cachedArticles.length > 0) {
+            //     // 从缓存中获取文章列表
+            //     this.articles = JSON.parse(cachedArticles);
+            //     // 加载docId对应的文章内容
+            //     this.queryArticleContent(this.docId);
+            //     return;
+            // }
 
             // 获取当前目录下的所有文件
             var targetPath = this.rootPath + this.topicId + ".sy";
@@ -72,7 +72,7 @@ export default {
             this.queryArticleContent(this.docId);
 
             // 把articles存放在缓存中
-            localStorage.setItem("suyuan_"+this.topicId+"_articles", JSON.stringify(this.articles));
+            // localStorage.setItem("suyuan_"+this.topicId+"_articles", JSON.stringify(this.articles));
         } catch (err) {
             // 捕获错误
             this.error = "无法获取笔记列表，请检查思源接口或配置";

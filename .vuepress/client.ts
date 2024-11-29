@@ -20,7 +20,7 @@ export default defineClientConfig({
             setTimeout(() => {
                 if(to.path.includes('topic')){
                     // 隐藏掉.page-info
-                    document.querySelector('.page-info').style.display = 'none';
+                    // document.querySelector('.page-info').style.display = 'none';
                 }
 
                 // 解决下iframe页面自适应问题
