@@ -13,8 +13,16 @@
         </div>
         <div class="note-list-right">
 
+            <!-- 这里加一个按钮  用来切换简易模式 -->
+            <div class="toggle-mode">
+                <button @click="switchMode">
+                    <!-- 根据articleMode的值显示文字 -->
+                    {{ articleMode === 2 ? "精简版" : "原文" }}
+                </button>
+            </div>
+
             <!-- 笔记显示区域 -->
-            <div class="article-content" v-if="articleContent" v-html="articleContent">
+            <div class="article-content" v-html="articleContent">
                 
             </div>
             
@@ -42,6 +50,7 @@ export default {
             rootPath: "/", // 专题库路径  这里直接使用根路径
             selectedNoteId: "20241128235548-sdzn70a", // 存储选中的笔记本 id
             searchWord: "",
+            articleMode:2, // 1为简易模式  2为详细模式
             token: "",
             notes: [], // 笔记本列表
             articles: topic_sgyy, // 文章列表
@@ -70,7 +79,7 @@ export default {
             // console.log(this.articles);
 
             // 加载docId对应的文章内容
-            this.queryArticleContent(this.docId);
+            await this.queryArticleContent(this.docId);
 
             // 把articles存放在缓存中
             // localStorage.setItem("suyuan_"+this.topicId+"_articles", JSON.stringify(this.articles));
@@ -81,6 +90,57 @@ export default {
         }
     },
     methods: {
+        async switchMode(){
+            // 切换页面样式  判断当前是简易模式还是详细模式
+            if(this.articleMode == 1){  // 当前是简易模式  切换为详细模式
+                // 刷新页面
+                await this.queryArticleContent(this.docId);
+                this.articleMode = 2;
+            }else if(this.articleMode == 2){  // 当前是详细模式  切换为简易模式 
+                // .article-content之下的p标签中只保留strong标签包住的内容 其他全部清除掉
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(this.articleContent, 'text/html');
+                const pTags = doc.querySelectorAll('p');
+                pTags.forEach(pTag => {
+                    const strongTags = pTag.querySelectorAll('strong');
+                    if (strongTags.length > 0) {
+                        const newContent = Array.from(strongTags).map(strongTag => {
+                            return "  "+strongTag.outerHTML;
+                        }).join('');
+                        pTag.innerHTML = newContent;
+                    } else {
+                        pTag.innerHTML = '';
+                    }
+                });
+                this.articleContent = doc.body.innerHTML;
+                this.articleMode = 1;
+            }
+        },
+        async queryArticleContent(docId) {
+            // 根据docId获取文章内容
+            // 调用思源 API 获取文章内容
+            let response = await siyuanApi.getArticleContent(docId);
+            if (response.data && response.data.content) {
+                this.articleContent = response.data.content;
+
+                // var articleContent = document.querySelector('.article-content');
+                // var pTags = articleContent.getElementsByTagName('p');
+                // for (var i = 0; i < pTags.length; i++) {
+                //     var pTag = pTags[i];
+                //     var strongTags = pTag.getElementsByTagName('strong');
+                //     if (strongTags.length > 0) {
+                //         var newContent = '';
+                //         for (var j = 0; j < strongTags.length; j++) {
+                //             newContent += "  "+strongTags[j].outerHTML;
+                //         }
+                //         pTag.innerHTML = newContent;
+                //     } else {
+                //         pTag.innerHTML = '';
+                //     }
+                // }
+                this.articleMode = 1;
+            }
+        },
         async fetchFullArticles(targetPath) {
             try {
                 let articles = [];
@@ -161,60 +221,36 @@ export default {
                 console.error(err);
             }
         },
-        async queryArticleDetail(path){
-            try {
-                let parts = path.split("/");
-                let articleId;
-                if (parts.length > 2) {
-                    articleId = parts[parts.length - 1].split(".")[0];
-                }
-                // 调用思源 API 获取该文章的内容
-                var response = await kernelApi.getBlockKramdown(articleId);
-                this.articleContent = marked(response.kramdown || '');
-                // // 去除{:开头}结束的内容
-                this.articleContent = this.articleContent.replace(/{:.*}/g, '');
-                // // 图片地址转换<img src="assets/screenshot-20241110054758-o3i3l65.png" alt="image">这种格式往src前添加xxx.com域名
-                this.articleContent = this.articleContent.replace(/<img src="assets\/(.*)" alt="(.*)">/g, '<img src="https://4b2de30a.r3.cpolar.cn/assets/$1" alt="$2">');
-                // // 去除{{{col   {{{row
-                this.articleContent = this.articleContent.replace(/{{{col/g, '');
-                this.articleContent = this.articleContent.replace(/{{{row/g, '');
-                // // 去除}}}
-                this.articleContent = this.articleContent.replace(/}}}/g, '');
-                // 去除(( )) 包住的内容也包括(( ))
-                this.articleContent = this.articleContent.replace(/\(\(\s*.*\s*\)\)/g, '');
-                // 把==《杀手壕》== 这种换成<strong>《杀手壕》</strong>
-                this.articleContent = this.articleContent.replace(/==(.*)==/g, '<strong>$1</strong>');
-            } catch (err) {
-                // 捕获错误
-                this.error = "无法获取该文章的内容，请检查思源接口或配置";
-                console.error(err);
-            }
-        },
         async queryArticleContent(articleId){
             try {
                 // 调用思源 API 获取该文章的内容
                 var response = await kernelApi.getBlockKramdown(articleId);
-                this.articleContent = response.kramdown
-                this.articleContent = this.articleContent.replace(/\[&lt;&lt;\]\(\)/g, '');
-                this.articleContent = this.articleContent.replace(/\[&gt;&gt;\]\(\)/g, '');
+                let articleContent = response.kramdown || '';
+                console.log(articleContent);
+                articleContent = articleContent.replace(/\[&lt;&lt;\]\(\)/g, '');
+                articleContent = articleContent.replace(/\[&gt;&gt;\]\(\)/g, '');
 
-                this.articleContent = marked(this.articleContent);
+                // 把这种格式的((20240121166440-23qg3kp "卢植"))只保留卢植这个文本
+                articleContent = articleContent.replace(/\(\((.*?)\s+"(.*?)".*?\)\)/g, '$2');
+                // 把这种格式的((20240121166440-23qg3kp))只保留20240121166440-23qg3kp这个文本
+                articleContent = articleContent.replace(/\(\((.*?)\)\)/g, '$1');
+
+                articleContent = marked(articleContent);
                 // // 去除{:开头}结束的内容
-                this.articleContent = this.articleContent.replace(/{:.*}/g, '');
-                // // 图片地址转换<img src="assets/screenshot-20241110054758-o3i3l65.png" alt="image">这种格式往src前添加xxx.com域名
-                // this.articleContent = this.articleContent.replace(/<img src="assets\/(.*)" alt="(.*)">/g, '<img src="https://localhost:8080/assets/$1" alt="$2">');
+                articleContent = articleContent.replace(/{:.*}/g, '');
                 // 把md里的图片去掉
-                this.articleContent = this.articleContent.replace(/<img src=".*?" alt="(.*?)".*?>/g, '');
+                articleContent = articleContent.replace(/<img src=".*?" alt="(.*?)".*?>/g, '');
                 // // 去除{{{col   {{{row
-                this.articleContent = this.articleContent.replace(/{{{col/g, '');
-                this.articleContent = this.articleContent.replace(/{{{row/g, '');
+                articleContent = articleContent.replace(/{{{col/g, '');
+                articleContent = articleContent.replace(/{{{row/g, '');
                 // // 去除}}}
-                this.articleContent = this.articleContent.replace(/}}}/g, '');
+                articleContent = articleContent.replace(/}}}/g, '');
                 // 去除(( )) 包住的内容也包括(( ))
-                this.articleContent = this.articleContent.replace(/\(\(\s*.*\s*\)\)/g, '');
+                articleContent = articleContent.replace(/\(\(\s*.*\s*\)\)/g, '');
                 // 把==这种包住的内容换成<strong>这种格式
-                this.articleContent = this.articleContent.replace(/==([^=]+)==/g, (match, p1) => `<strong>${p1}</strong>`);
+                articleContent = articleContent.replace(/==([^=]+)==/g, (match, p1) => `<strong>${p1}</strong>`);
                 // 网页title设置标题
+                this.articleContent = articleContent;
             } catch (err) {
                 // 捕获错误
                 this.error = "无法获取该文章的内容，请检查思源接口或配置";
@@ -285,6 +321,15 @@ export default {
   white-space: normal;
   word-wrap: break-word; 
   overflow-wrap: break-word; 
+}
+
+.toggle-mode{
+    /* 向右对齐 */
+    text-align: right;
+    /* 添加一些内边距 */
+    padding-right: 10px;
+    /* 添加一些上边距 */
+    padding-top: 0px;
 }
 
 </style>
