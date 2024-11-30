@@ -288,6 +288,10 @@ export default {
 .note-list-container {
   display: flex;
   flex-wrap: nowrap;
+  border: #65b84d 2px solid !important;
+  border-radius: 5px !important;
+  padding: 1rem !important;
+  margin-bottom: 1rem !important;
 }
 
 .note-list-left {
@@ -295,7 +299,7 @@ export default {
   max-width: 25%;
   padding: 10px;
   box-sizing: border-box;
-  border: #65b84d 1px solid !important;
+  border: #65b84d 2px solid !important;
   border-radius: 5px !important;
   padding: 1rem !important;
 }
@@ -305,8 +309,7 @@ export default {
   max-width: 75%;
   padding: 10px;
   box-sizing: border-box;
-  overflow: hidden; /* 隐藏溢出内容，但不提供滚动条 */
-  border: #65b84d 1px solid !important;
+  border: #65b84d 2px solid !important;
   border-radius: 5px !important;
   padding: 1rem !important;
 }

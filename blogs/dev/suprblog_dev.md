@@ -1,5 +1,5 @@
 ---
-title: SuprBlog开发计划
+title: SuprBlog开发笔记
 date: 2024-11-23 21:28
 tags:
  - SuprBlog

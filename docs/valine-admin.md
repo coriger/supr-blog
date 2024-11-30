@@ -1,9 +1,6 @@
 ---
 title: Valine Admin 后台搭建(修订)
 date: 2020-07-06
-author: Caleb
-tags:
- - Markdown
 ---
 
 ::: tip

@@ -60,7 +60,7 @@ strong{
     /* 判断如果有iframe 则padding-left */
     padding-left: 50% !important;
     position: relative;
-    border: #65b84d 1px solid !important;
+    /* border: #65b84d 1px solid !important; */
     border-radius: 5px !important;
     padding: 1rem !important;
 }
@@ -77,3 +77,12 @@ strong{
 .page-catalog-container {
     top: 7rem !important;
 }
+
+.footer-wrapper{
+    display: none !important;
+}
+
+.page-meta{
+    display: none !important;
+}
+

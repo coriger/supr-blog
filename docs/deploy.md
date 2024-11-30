@@ -1,9 +1,6 @@
 ---
 title: Pages 部署
 date: 2019-05-14
-tags:
- - Markdown
- - Github
 ---
 
 > 这里我们只介绍 GitLab 和 GitHub 的 pages 功能的部署。
