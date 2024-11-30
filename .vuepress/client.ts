@@ -7,9 +7,6 @@ import MenuItem from './components/MenuItem.vue'
 
 export default defineClientConfig({
     enhance({ app, router }) {
-        app.component('HelloWorld', HelloWorld)
-        app.component('SidebarSection', SidebarSection)
-        // app.component('NoteList',NoteList)
         app.component('Topic',Topic)
         app.component('MenuItem', MenuItem)
 

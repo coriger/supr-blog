@@ -1,8 +1,8 @@
 ---
-title: "上证指数"
+title: "酒ETF"
 date: 2024-12-15
 tags:
-  - Index
+  - ETF
 
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "上证指数"
-date: 2024-12-15
+title: "创业板指"
+date: 2024-11-30
 tags:
   - Index
 
