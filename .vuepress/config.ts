@@ -49,9 +49,9 @@ export default defineUserConfig({
         autoSetBlogCategories: true,
         navbar: [
             { text: "首页", link: "/" },
-            { text: "分类", link: "/categories/trade/1" },
+            // { text: "分类", link: "/categories/trade/1" },
             // { text: '思源笔记', link: '/siyuan/note-list' },
-            { text: "标签", link: "/tags/Trade/1" },
+            { text: "标签", link: "/tags/Index/1" },
             { text: '三国演义', link: '/siyuan/topic?topicId=20241124161901-6nofis5&docId=20241126235855-xofvorh' },
             // {
             //     text: "系列",
