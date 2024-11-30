@@ -19,7 +19,7 @@
     "vue": "^3.5.0",
     "vue-router": "^4.4.5",
     "vuepress": "2.0.0-rc.18",
-    "vuepress-theme-reco": "2.0.0-rc.23",
+    "vuepress-theme-reco": "^1.6.17",
     "zhi-siyuan-api": "^2.23.0"
   }
 }
