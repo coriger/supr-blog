@@ -1,1 +1,0 @@
-import{_ as e,c as o,a as c,o as n,r as a}from"./app-DTNzZX66.js";const r={};function s(p,_){const t=a("Topic");return n(),o("div",null,[c(t)])}const l=e(r,[["render",s],["__file","topic.html.vue"]]),m=JSON.parse('{"path":"/siyuan/topic.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[]}');export{l as comp,m as data};

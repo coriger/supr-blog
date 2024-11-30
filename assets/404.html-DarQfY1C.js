@@ -1,1 +1,0 @@
-import{_ as e,c as o,d as n,o as a}from"./app-DTNzZX66.js";const r={};function l(s,t){return a(),o("div",null,t[0]||(t[0]=[n("p",null,"404 Not Found",-1)]))}const _=e(r,[["render",l],["__file","404.html.vue"]]),d=JSON.parse('{"path":"/404.html","title":"","lang":"zh-CN","frontmatter":{"layout":"NotFound"},"headers":[]}');export{_ as comp,d as data};
