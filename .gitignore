@@ -7,4 +7,3 @@ node_modules
 .pnp.*
 package-lock.json
 yarn-error.log
-package.json
