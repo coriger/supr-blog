@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a}from"./app-DtsRSPkg.js";const c={};function o(n,r){return a(),e("div")}const s=t(c,[["render",o],["__file","1.html.vue"]]),_=JSON.parse('{"path":"/tags/changxianchiyou/1.html","title":"","lang":"zh-CN","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{s as comp,_ as data};
